@@ -27,3 +27,15 @@ jobs:
           acer2310/aula-kube-news:${{github.run_number}}
           acer2310/aula-kube-news:latest
     
+  CD:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v5.0.0
+
+    - name: definindo o context
+    - uses: Azure/k8s-set-context@v3.0
+      with:
+        method: kubeconfig
+        kubeconfig: ${{secrets.K8S_CONFIG}}
+        
