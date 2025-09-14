@@ -24,6 +24,6 @@ jobs:
         file: ./src/dockerfile
         push: true
         tags: |
-          acer2310/aula-kube-news:v1
+          acer2310/aula-kube-news:${{github.run_number}}
           acer2310/aula-kube-news:latest
     
